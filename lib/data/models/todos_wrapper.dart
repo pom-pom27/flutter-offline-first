@@ -2,11 +2,14 @@ import 'package:equatable/equatable.dart';
 
 import 'package:flutter_offline/data/models/todos.dart';
 
-enum TodoStatus { success, pending, failed }
+class TodoStatus {
+  static const success = 'Success';
+  static const pending = 'Pending';
+}
 
 class TodoWrapper extends Equatable {
   final Todos todos;
-  final TodoStatus todoStatus;
+  final String todoStatus;
   TodoWrapper({
     required this.todos,
     required this.todoStatus,
@@ -17,7 +20,7 @@ class TodoWrapper extends Equatable {
 
   TodoWrapper copyWith({
     Todos? todos,
-    TodoStatus? todoStatus,
+    String? todoStatus,
   }) {
     return TodoWrapper(
       todos: todos ?? this.todos,
@@ -32,5 +35,6 @@ final dummyTodos =
 final dummyTodoList = [
   TodoWrapper(todos: dummyTodos, todoStatus: TodoStatus.success),
   TodoWrapper(todos: dummyTodos, todoStatus: TodoStatus.pending),
-  TodoWrapper(todos: dummyTodos, todoStatus: TodoStatus.failed),
+  TodoWrapper(todos: dummyTodos, todoStatus: TodoStatus.pending),
+  TodoWrapper(todos: dummyTodos, todoStatus: TodoStatus.pending),
 ];
