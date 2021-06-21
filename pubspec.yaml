@@ -28,6 +28,8 @@ dependencies:
   flutter_bloc: ^7.0.1
   http: ^0.13.3
   moor_flutter: ^4.0.0
+  moor:
+  provider:
 
 dev_dependencies:
   flutter_test:
